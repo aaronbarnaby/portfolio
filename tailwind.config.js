@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     fontFamily: {
       inter: ["var(--font-inter)", "sans-serif"],
-      sarina: ["var(--font-sarina)", "cursive"],
+      caveat: ["var(--font-caveat)", "cursive"],
       barlow: ["var(--font-barlow)", "sans-serif"],
       mono: ["monospace"],
     },
