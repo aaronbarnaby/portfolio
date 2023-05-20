@@ -6,7 +6,7 @@ import { FiDownload } from "react-icons/fi";
 
 import { FadeContainer, opacityVariant, popUp } from "~/utils";
 
-import profileImage from '~/assets/profileImageSample.jpg';
+import profileImage from '~/assets/aaron.jpg';
 import Link from "next/link";
 
 export function ProfileBadge() {
@@ -21,11 +21,11 @@ export function ProfileBadge() {
       <div className="relative flex flex-col items-center w-full gap-10 mx-auto">
         <motion.div
           variants={popUp}
-          className="relative flex items-center justify-center p-3 rounded-full w-44 h-44 xs:w-52 xs:h-52 before:absolute before:inset-0 before:border-t-4 before:border-b-4 before:border-black before:dark:border-white before:rounded-full before:animate-photo-spin"
+          className="relative flex items-center justify-center p-3 rounded-full w-96 h-96 before:absolute before:inset-0 before:border-t-4 before:border-b-4 before:border-black before:dark:border-white before:rounded-full before:animate-photo-spin"
         >
           <Image
             src={profileImage}
-            className="rounded-full shadow"
+            className="rounded-full"
             alt="Profile Image"
             quality={75}
             priority
