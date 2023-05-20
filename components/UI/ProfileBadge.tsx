@@ -2,26 +2,20 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { FiDownload } from "react-icons/fi";
 
-import { FadeContainer, opacityVariant, popUp } from "~/utils";
+import { popUp } from "~/utils";
 
 import profileImage from '~/assets/aaron.jpg';
-import Link from "next/link";
 
 export function ProfileBadge() {
   return (
-    <motion.section
-      initial="hidden"
-      whileInView="visible"
-      variants={FadeContainer}
-      viewport={{ once: true }}
+    <section
       className="grid min-h-screen py-20 place-content-center"
     >
       <div className="relative flex flex-col items-center w-full gap-10 mx-auto">
         <motion.div
           variants={popUp}
-          className="relative flex items-center justify-center p-3 rounded-full w-96 h-96 before:absolute before:inset-0 before:border-t-4 before:border-b-4 before:border-black before:dark:border-white before:rounded-full before:animate-photo-spin"
+          className="relative flex items-center justify-center p-1 rounded-full w-[28rem] h-96 before:absolute before:inset-0 before:border-t-8 before:border-b-8 before:border-l-2 before:border-r-2 before:border-black before:dark:border-white before:rounded-full"
         >
           <Image
             src={profileImage}
@@ -34,21 +28,19 @@ export function ProfileBadge() {
 
         <div className="flex flex-col w-full gap-3 p-5 text-center select-none ">
           <div className="flex flex-col gap-1">
-            <motion.h1
-              variants={opacityVariant}
+            <h1
               className="text-5xl font-bold lg:text-6xl font-caveat"
             >
               Aaron Barnaby
-            </motion.h1>
-            <motion.p
-              variants={opacityVariant}
+            </h1>
+            <p
               className="font-medium text-xs md:text-sm lg:text-lg text-[#383838] dark:text-gray-200"
             >
               Full-Stack Web/Software Developer
-            </motion.p>
+            </p>
           </div>
         </div>
-        <Link
+        {/* <Link
           href="#"
           target="_blank"
           rel="noopener noreferrer"
@@ -56,8 +48,8 @@ export function ProfileBadge() {
         >
           <FiDownload />
           <p>Resume</p>
-        </Link>
+        </Link> */}
       </div>
-    </motion.section>
+    </section>
   );
 }

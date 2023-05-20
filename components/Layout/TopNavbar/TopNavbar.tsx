@@ -6,7 +6,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
 
 import { HamBurger, Logo } from "~/components/UI";
-import { FadeContainer, popUp, useDarkMode } from "~/utils";
+import { useDarkMode } from "~/utils";
 import { NavItem } from "./NavItem";
 
 export default function TopNavbar() {
@@ -87,34 +87,23 @@ export default function TopNavbar() {
       </Link>
 
       {/* Top Nav */}
-      <motion.nav className="z-10 hidden sm:flex md:inset-0 md:justify-center">
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={FadeContainer}
-          className="flex items-center md:gap-2"
-        >
+      <nav className="z-10 hidden sm:flex md:inset-0 md:justify-center">
+        <div className="flex items-center md:gap-2">
           <NavItem href="/home" text="Home" />
-          <NavItem href="/" text="About" />
-          <NavItem href="/" text="Skills" />
-          <NavItem href="/" text="Projects" />
-        </motion.div>
-      </motion.nav>
+          {/* <NavItem href="/about" text="About" />
+          <NavItem href="/skills" text="Skills" />
+          <NavItem href="/projects" text="Projects" /> */}
+        </div>
+      </nav>
 
       {/* DarkMode Container */}
-      <motion.div
-        initial="hidden"
-        animate="visible"
-        variants={popUp}
-        className="cursor-pointer"
-        title="Toggle Theme"
-      >
+      <div className="cursor-pointer" title="Toggle Theme">
         <DarkModeSwitch
           checked={isDarkMode}
           onChange={changeDarkMode}
           size={24}
         />
-      </motion.div>
+      </div>
     </div>
   );
 }

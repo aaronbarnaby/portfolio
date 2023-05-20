@@ -36,3 +36,23 @@ export const headingFromLeft: Variants = {
     },
   },
 };
+
+export const popUpFromBottomForText: Variants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      stiffness: 60,
+    },
+  },
+};
+
+export const mobileNavItemSideways: Variants = {
+  hidden: { x: -40, opacity: 0 },
+  visible: {
+    x: 0,
+    opacity: 1,
+  },
+};

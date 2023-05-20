@@ -1,8 +1,9 @@
+import { Contact } from "~/components/Blocks"
 import { ProfileBadge, SkillsSection } from "~/components/UI"
 
 
 export const metadata = {
-  title: 'Aaron Barnaby Portfolio',
+  title: 'Aaron Barnaby',
   description: 'Full Stack Developer with a passion for modern and best practice development.  Next.js, C#, Typescript, React and AWS',
   keywords: "aaron barnaby, portfolio, full stack, developer, next.js, .net, typescript, react, aws"
 }
@@ -14,6 +15,7 @@ export default function Home() {
 
       <div>
         <SkillsSection />
+        <Contact />
       </div>
     </div>
   )
