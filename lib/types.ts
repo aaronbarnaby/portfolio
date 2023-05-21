@@ -10,8 +10,7 @@ export type AnimatedTAGProps = {
 
 export type ContactFormInput = {
   to_name: string;
-  first_name: string;
-  last_name: string;
+  name: string;
   email: string;
   subject: string;
   message: string;

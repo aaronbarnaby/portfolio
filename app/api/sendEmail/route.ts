@@ -3,14 +3,15 @@ import { MailtrapClient } from 'mailtrap';
 
 export async function POST(request: Request) {
   const res = await request.json();
+  console.log('sendEmail req', res);
 
-  const TOKEN = process.env.MAILTRAP_TOKEN;
+  const TOKEN = process.env.MAILTRAP_TOKEN as string;
   const ENDPOINT = "https://send.api.mailtrap.io/";
 
   const client = new MailtrapClient({ endpoint: ENDPOINT, token: TOKEN });
 
   const sender = {
-    email: "mailtrap@ajabarnaby.com",
+    email: "mailtrap@ajbarnaby.com",
     name: "Mailtrap Test",
   };
   
@@ -20,7 +21,7 @@ export async function POST(request: Request) {
     }
   ];
 
-  client
+  await client
     .send({
       from: sender,
       to: recipients,
@@ -30,5 +31,5 @@ export async function POST(request: Request) {
     })
   .then(console.log, console.error);
 
-  return NextResponse.json({ res });
+  return NextResponse.json({ completed: true  });
 }

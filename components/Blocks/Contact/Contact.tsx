@@ -6,7 +6,7 @@ import ContactForm from "./ContactForm";
 
 export default function Contact() {
   return (
-    <div id="contact" className="dark:bg-darkPrimary !relative">
+    <div id="contact" className="dark:bg-darkPrimary !relative mb-10">
       <section className="pt-6 text-center w-full-width dark:bg-darkPrimary dark:text-white">
         <AnimatedHeading
           variants={popUpFromBottomForText}
@@ -19,12 +19,11 @@ export default function Contact() {
           variants={popUpFromBottomForText}
           className="px-4 py-2 font-medium dark:text-gray-300"
         >
-          If you would like to get in touch with me about any of my projects, work or just in general then please contact me.
+          If you would like to get in touch with me about any of my projects, work or just in general then please <a href="mailto:me@ajbarnaby.com" className="text-blue-500">contact me</a>.
         </AnimatedText>
       </section>
 
-      <section className="flex flex-col w-full px-5 mx-auto lg:flex-row dark:bg-darkPrimary dark:text-white lg:pb-10">
-        {/* Left Contact form section */}
+      {/* <section className="flex flex-col w-full px-5 mx-auto lg:flex-row dark:bg-darkPrimary dark:text-white lg:pb-10">
         <div className="w-full mx-auto mt-10">
           <AnimatedHeading
             variants={popUpFromBottomForText}
@@ -35,7 +34,7 @@ export default function Contact() {
 
           <ContactForm />
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }

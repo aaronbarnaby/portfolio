@@ -21,12 +21,11 @@ export default function ContactForm() {
     return true;
   }
 
-  function sendEmail(e: React.SyntheticEvent) {
+  async function sendEmail(e: React.SyntheticEvent) {
     e.preventDefault();
 
     const target = e.target as typeof e.target & {
-      first_name: { value: string };
-      last_name: { value: string };
+      name: { value: string };
       email: { value: string };
       subject: { value: string };
       message: { value: string };
@@ -34,8 +33,7 @@ export default function ContactForm() {
 
     const emailData = {
       to_name: "Aaron Barnaby",
-      first_name: target.first_name.value.trim(),
-      last_name: target.last_name.value.trim(),
+      name: target.name.value.trim(),
       email: target.email.value.trim(),
       subject: target.subject.value.trim(),
       message: target.message.value.trim(),
@@ -54,6 +52,8 @@ export default function ContactForm() {
     const toastId = toast.loading("Processing ⌛");
 
     // TODO: Call Api Send Email
+    const apiRespsone = await fetch('/api/sendEmail', { method: 'POST', body: JSON.stringify(emailData) }).then(resp => resp.json());
+    console.log(apiRespsone);
   }
 
   return (
@@ -67,46 +67,25 @@ export default function ContactForm() {
         className="flex flex-col items-center w-full max-w-xl mx-auto my-10 dark:text-gray-300" 
         onSubmit={sendEmail}
       >
-        <div className="grid w-full grid-cols-2 gap-6">
-          <motion.div
+        <motion.div
             variants={mobileNavItemSideways}
             className="relative z-0 w-full mb-6 group"
           >
             <input
               type="text"
-              name="first_name"
-              id="floating_first_name"
+              name="name"
+              id="floating_name"
               className="block w-full px-0 py-2 mt-2 text-sm bg-transparent border-0 border-b-2 appearance-none text-white-900 border-slate-500 dark:text-white dark:border-gray-400 dark:focus:border-white focus:outline-none focus:ring-0 focus:border-black peer"
               placeholder=" "
               required
             />
             <label
-              htmlFor="floating_first_name"
+              htmlFor="floating_name"
               className="peer-focus:font-medium absolute text-sm text-slate-600 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-black dark:peer-focus:text-white peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
             >
-              First name
+              Name
             </label>
           </motion.div>
-          <motion.div
-            variants={mobileNavItemSideways}
-            className="relative z-0 w-full mb-6 group"
-          >
-            <input
-              type="text"
-              name="last_name"
-              id="floating_last_name"
-              className="block w-full px-0 py-2 mt-2 text-sm text-gray-900 bg-transparent border-0 border-b-2 appearance-none border-slate-500 dark:text-white dark:border-gray-400 dark:focus:border-white focus:outline-none focus:ring-0 focus:border-black peer"
-              placeholder=" "
-              required
-            />
-            <label
-              htmlFor="floating_last_name"
-              className="peer-focus:font-medium absolute text-sm text-slate-600 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-black dark:peer-focus:text-white peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-            >
-              Last name
-            </label>
-          </motion.div>
-        </div>
         <motion.div
           variants={mobileNavItemSideways}
           className="relative z-0 w-full mb-6 group"

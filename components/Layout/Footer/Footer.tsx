@@ -22,9 +22,11 @@ export default function Footer() {
         <section className="grid grid-cols-3 gap-10">
          <div className="flex flex-col gap-4 capitalize">
             <FooterLink route="home" text="home" />
-            {/* <FooterLink route="about" text="about" />
+            <FooterLink route="about" text="about" />
+            {/* <FooterLink route="projects" text="projects" />  */}
+            {/* 
             <FooterLink route="skills" text="skills" />
-            <FooterLink route="projects" text="projects" /> */}
+            */}
           </div>
           <div className="flex flex-col gap-4 capitalize">
             <Link
