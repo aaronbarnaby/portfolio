@@ -20,7 +20,7 @@ export function TopNavbar() {
       <nav className="z-10 hidden sm:flex md:inset-0 md:justify-center">
         <div className="flex items-center md:gap-2">
           <NavItem href="/home" text="Home" />
-          {/* <NavItem href="/about" text="About" /> */}
+          <NavItem href="/about" text="About" />
           {/* <NavItem href="/projects" text="Projects" /> */}
           {/* <NavItem href="/skills" text="Skills" /> */}
         </div>
