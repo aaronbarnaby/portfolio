@@ -6,11 +6,7 @@ export default function useScrollPercentage() {
     var h = document.documentElement;
     var b = document.body;
 
-    return (
-      ((h.scrollTop || b.scrollTop) /
-        ((h.scrollHeight || b.scrollHeight) - h.clientHeight)) *
-      100
-    );
+    return ((h.scrollTop || b.scrollTop) / ((h.scrollHeight || b.scrollHeight) - h.clientHeight)) * 100;
   }
 
   const scrollEvent = useCallback(() => {

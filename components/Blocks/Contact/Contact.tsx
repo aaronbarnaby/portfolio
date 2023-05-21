@@ -1,26 +1,16 @@
-"use client"
-
-import { AnimatedHeading, AnimatedText } from "~/components/Motion";
-import { popUpFromBottomForText } from "~/utils";
-import ContactForm from "./ContactForm";
-
 export default function Contact() {
   return (
     <div id="contact" className="dark:bg-darkPrimary !relative mb-10">
       <section className="pt-6 text-center w-full-width dark:bg-darkPrimary dark:text-white">
-        <AnimatedHeading
-          variants={popUpFromBottomForText}
-          className="text-4xl font-bold"
-        >
-          Get in touch
-        </AnimatedHeading>
+        <h1 className="text-4xl font-bold">Get in touch</h1>
 
-        <AnimatedText
-          variants={popUpFromBottomForText}
-          className="px-4 py-2 font-medium dark:text-gray-300"
-        >
-          If you would like to get in touch with me about any of my projects, work or just in general then please <a href="mailto:me@ajbarnaby.com" className="text-blue-500">contact me</a>.
-        </AnimatedText>
+        <p className="px-4 py-2 font-medium dark:text-gray-300">
+          If you would like to get in touch with me about any of my projects, work or just in general then please{" "}
+          <a href="mailto:me@ajbarnaby.com" className="text-blue-500">
+            contact me
+          </a>
+          .
+        </p>
       </section>
 
       {/* <section className="flex flex-col w-full px-5 mx-auto lg:flex-row dark:bg-darkPrimary dark:text-white lg:pb-10">

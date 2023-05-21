@@ -9,7 +9,7 @@ type DarkModeContextType = {
 
 const DarkModeContext = createContext<DarkModeContextType | undefined>(undefined);
 
-export function DarkModeProvider( { children }: PropsWithChildren) {
+export function DarkModeProvider({ children }: PropsWithChildren) {
   const [isDarkMode, setDarkMode] = useState(false);
 
   function updateTheme() {
@@ -31,7 +31,7 @@ export function DarkModeProvider( { children }: PropsWithChildren) {
     localStorage.setItem("isDarkMode", value.toString());
     updateTheme();
   }
- 
+
   return (
     <DarkModeContext.Provider value={{ isDarkMode, changeDarkMode }}>
       {children}

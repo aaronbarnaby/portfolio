@@ -2,10 +2,8 @@
 
 import { motion } from "framer-motion";
 import { useRef } from "react";
-import { ToastContainer, toast } from "react-toastify";
-import Ripples from "react-ripples";
+import { useDarkMode } from "~/lib/Context/DarkModeContext";
 import { ContactFormInput } from "~/lib/types";
-import { FadeContainer, mobileNavItemSideways, useDarkMode } from "~/utils";
 
 export default function ContactForm() {
   const { isDarkMode } = useDarkMode();
@@ -39,57 +37,53 @@ export default function ContactForm() {
       message: target.message.value.trim(),
     };
 
-    if (!validateForm(emailData) && !toast.isActive(FailToastId)) {
-      return toast.error("Looks like you have not filled the form", {
-        toastId: FailToastId,
-      });
-    }
+    // if (!validateForm(emailData) && !toast.isActive(FailToastId)) {
+    //   return toast.error("Looks like you have not filled the form", {
+    //     toastId: FailToastId,
+    //   });
+    // }
 
     // Making submit button disable
     sendButtonRef.current.setAttribute("disabled", "true");
 
     // Creating a loading toast
-    const toastId = toast.loading("Processing ⌛");
+    //const toastId = toast.loading("Processing ⌛");
 
     // TODO: Call Api Send Email
-    const apiRespsone = await fetch('/api/sendEmail', { method: 'POST', body: JSON.stringify(emailData) }).then(resp => resp.json());
+    const apiRespsone = await fetch("/api/sendEmail", { method: "POST", body: JSON.stringify(emailData) }).then(
+      (resp) => resp.json(),
+    );
     console.log(apiRespsone);
   }
 
   return (
     <>
-      <motion.form 
-        ref={formRef} 
+      <motion.form
+        ref={formRef}
         initial="hidden"
         whileInView="visible"
         variants={FadeContainer}
-        viewport={{ once: true }} 
-        className="flex flex-col items-center w-full max-w-xl mx-auto my-10 dark:text-gray-300" 
+        viewport={{ once: true }}
+        className="flex flex-col items-center w-full max-w-xl mx-auto my-10 dark:text-gray-300"
         onSubmit={sendEmail}
       >
-        <motion.div
-            variants={mobileNavItemSideways}
-            className="relative z-0 w-full mb-6 group"
+        <motion.div variants={mobileNavItemSideways} className="relative z-0 w-full mb-6 group">
+          <input
+            type="text"
+            name="name"
+            id="floating_name"
+            className="block w-full px-0 py-2 mt-2 text-sm bg-transparent border-0 border-b-2 appearance-none text-white-900 border-slate-500 dark:text-white dark:border-gray-400 dark:focus:border-white focus:outline-none focus:ring-0 focus:border-black peer"
+            placeholder=" "
+            required
+          />
+          <label
+            htmlFor="floating_name"
+            className="peer-focus:font-medium absolute text-sm text-slate-600 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-black dark:peer-focus:text-white peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
           >
-            <input
-              type="text"
-              name="name"
-              id="floating_name"
-              className="block w-full px-0 py-2 mt-2 text-sm bg-transparent border-0 border-b-2 appearance-none text-white-900 border-slate-500 dark:text-white dark:border-gray-400 dark:focus:border-white focus:outline-none focus:ring-0 focus:border-black peer"
-              placeholder=" "
-              required
-            />
-            <label
-              htmlFor="floating_name"
-              className="peer-focus:font-medium absolute text-sm text-slate-600 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-black dark:peer-focus:text-white peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-            >
-              Name
-            </label>
-          </motion.div>
-        <motion.div
-          variants={mobileNavItemSideways}
-          className="relative z-0 w-full mb-6 group"
-        >
+            Name
+          </label>
+        </motion.div>
+        <motion.div variants={mobileNavItemSideways} className="relative z-0 w-full mb-6 group">
           <input
             type="email"
             name="email"
@@ -105,10 +99,7 @@ export default function ContactForm() {
             Email address
           </label>
         </motion.div>
-        <motion.div
-          variants={mobileNavItemSideways}
-          className="relative z-0 w-full mb-6 group"
-        >
+        <motion.div variants={mobileNavItemSideways} className="relative z-0 w-full mb-6 group">
           <input
             type="subject"
             name="subject"
@@ -124,10 +115,7 @@ export default function ContactForm() {
             Subject
           </label>
         </motion.div>
-        <motion.div
-          variants={mobileNavItemSideways}
-          className="relative z-0 w-full mb-6 group"
-        >
+        <motion.div variants={mobileNavItemSideways} className="relative z-0 w-full mb-6 group">
           <textarea
             name="message"
             id="floating_message"
@@ -147,24 +135,16 @@ export default function ContactForm() {
           variants={mobileNavItemSideways}
           className="w-full overflow-hidden rounded-lg shadow-lg sm:max-w-sm"
         >
-          <Ripples
-            className="flex justify-center w-full"
-            color="rgba(225, 225,225,0.2)"
+          <button
+            ref={sendButtonRef}
+            type="submit"
+            className="relative w-full px-4 py-3 overflow-hidden text-sm font-medium text-center text-white transition duration-300 rounded-lg outline-none bg-neutral-800 dark:bg-darkSecondary active:scale-95 disabled:opacity-50 disabled:active:scale-100"
           >
-            <button
-              ref={sendButtonRef}
-              type="submit"
-              className="relative w-full px-4 py-3 overflow-hidden text-sm font-medium text-center text-white transition duration-300 rounded-lg outline-none bg-neutral-800 dark:bg-darkSecondary active:scale-95 disabled:opacity-50 disabled:active:scale-100"
-            >
-              Send
-            </button>
-          </Ripples>
+            Send
+          </button>
         </motion.div>
       </motion.form>
-      <ToastContainer
-        theme={isDarkMode ? "dark" : "light"}
-        style={{ zIndex: 1000 }}
-      />
+      {/* <ToastContainer theme={isDarkMode ? "dark" : "light"} style={{ zIndex: 1000 }} /> */}
     </>
   );
 }

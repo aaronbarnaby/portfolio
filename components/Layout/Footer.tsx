@@ -20,7 +20,7 @@ export default function Footer() {
         </div> */}
 
         <section className="grid grid-cols-3 gap-10">
-         <div className="flex flex-col gap-4 capitalize">
+          <div className="flex flex-col gap-4 capitalize">
             <FooterLink route="home" text="home" />
             <FooterLink route="about" text="about" />
             {/* <FooterLink route="projects" text="projects" />  */}
@@ -29,41 +29,17 @@ export default function Footer() {
             */}
           </div>
           <div className="flex flex-col gap-4 capitalize">
-            <Link
-              href="https://twitter.com/barnaby_aaron"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <p className="hover:text-black dark:hover:text-white w-fit">
-                Twitter
-              </p>
+            <Link href="https://twitter.com/barnaby_aaron" target="_blank" rel="noopener noreferrer">
+              <p className="hover:text-black dark:hover:text-white w-fit">Twitter</p>
             </Link>
-            <Link
-              href="https://www.linkedin.com/in/aaron-barnaby-9b6ba589"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <p className="hover:text-black dark:hover:text-white w-fit">
-                LinkedIn
-              </p>
+            <Link href="https://www.linkedin.com/in/aaron-barnaby-9b6ba589" target="_blank" rel="noopener noreferrer">
+              <p className="hover:text-black dark:hover:text-white w-fit">LinkedIn</p>
             </Link>
-            <Link
-              href="https://github.com/aaronbarnaby"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <p className="hover:text-black dark:hover:text-white w-fit">
-                Github
-              </p>
+            <Link href="https://github.com/aaronbarnaby" target="_blank" rel="noopener noreferrer">
+              <p className="hover:text-black dark:hover:text-white w-fit">Github</p>
             </Link>
-            <Link
-              href="mailto:me@ajbarnaby.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <p className="hover:text-black dark:hover:text-white w-fit">
-                Mail
-              </p>
+            <Link href="mailto:me@ajbarnaby.com" target="_blank" rel="noopener noreferrer">
+              <p className="hover:text-black dark:hover:text-white w-fit">Mail</p>
             </Link>
           </div>
         </section>
@@ -86,9 +62,7 @@ export default function Footer() {
 function FooterLink({ route, text }: { route: string; text: string }) {
   return (
     <Link href={`/${route}`}>
-      <p className="hover:text-black dark:hover:text-white w-fit">
-        {text}
-      </p>
+      <p className="hover:text-black dark:hover:text-white w-fit">{text}</p>
     </Link>
   );
 }
@@ -98,9 +72,7 @@ function NotPlaying() {
     <div className="flex flex-row-reverse items-center justify-between gap-2 sm:flex-row sm:justify-start">
       <SiSpotify className="w-6 h-6" />
       <div className="flex flex-col sm:flex-row sm:items-center sm:gap-3">
-        <div className="font-semibold text-black md:text-lg dark:text-white">
-          Not Playing
-        </div>
+        <div className="font-semibold text-black md:text-lg dark:text-white">Not Playing</div>
         <span className="hidden md:inline-flex">—</span>
         <p className="text-xs text-gray-500 sm:text-sm">Spotify</p>
       </div>
@@ -129,14 +101,10 @@ function WhenPlaying({ song }: { song: Song }) {
             />
           </div>
           <div className="flex flex-col sm:flex-row sm:items-center sm:gap-3">
-            <h3 className="font-semibold text-black md:text-lg dark:text-white animate-">
-              {song.title}
-            </h3>
+            <h3 className="font-semibold text-black md:text-lg dark:text-white animate-">{song.title}</h3>
             <span className="hidden md:inline-flex dark:text-gray-300">—</span>
 
-            <p className="text-xs text-gray-600 dark:text-gray-400 sm:text-sm">
-              {song.artist}
-            </p>
+            <p className="text-xs text-gray-600 dark:text-gray-400 sm:text-sm">{song.artist}</p>
           </div>
         </div>
         <div className="flex items-center gap-2">

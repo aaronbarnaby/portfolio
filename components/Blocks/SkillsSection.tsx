@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import {
   SiHtml5,
   SiCss3,
@@ -15,13 +14,11 @@ import {
   SiAdobephotoshop,
   SiCsharp,
   SiJira,
-  SiTerraform
+  SiTerraform,
 } from "react-icons/si";
-import { TbSql } from "react-icons/tb"
-
-import { FadeContainer, popUp, useDarkMode } from "~/utils";
-import * as WindowsAnimation from "~/lib/windowsAnimation";
-import { Heading } from "./Heading";
+import { TbSql } from "react-icons/tb";
+import { Heading } from "../UI/Heading";
+import { useDarkMode } from "~/lib/Context/DarkModeContext";
 
 export function SkillsSection() {
   const { isDarkMode } = useDarkMode();
@@ -52,8 +49,8 @@ export function SkillsSection() {
       Icon: SiNextdotjs,
     },
     {
-      name: 'C#',
-      Icon: SiCsharp
+      name: "C#",
+      Icon: SiCsharp,
     },
     {
       name: "Tailwind CSS",
@@ -68,51 +65,37 @@ export function SkillsSection() {
       Icon: SiNodedotjs,
     },
     {
-      name: 'SQL',
-      Icon: TbSql
+      name: "SQL",
+      Icon: TbSql,
     },
     {
-      name: 'AWS',
-      Icon: SiAmazonaws
+      name: "AWS",
+      Icon: SiAmazonaws,
     },
     {
-      name: 'Terraform',
-      Icon: SiTerraform
+      name: "Terraform",
+      Icon: SiTerraform,
     },
     {
-      name: 'JIRA',
-      Icon: SiJira
+      name: "JIRA",
+      Icon: SiJira,
     },
     {
-      name: 'Photoshop',
-      Icon: SiAdobephotoshop
-    }
+      name: "Photoshop",
+      Icon: SiAdobephotoshop,
+    },
   ];
 
   return (
     <section className="mx-5">
       <Heading title="My Skills" />
 
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        variants={FadeContainer}
-        viewport={{ once: true }}
-        className="grid grid-cols-3 gap-4 my-10"
-      >
+      <div className="grid grid-cols-3 gap-4 my-10">
         {skills.map((skill, index) => {
           const Icon = skill.Icon;
           return (
-            <motion.div
-              variants={popUp}
+            <div
               key={index}
-              title={skill.name}
-              onMouseMove={(e: React.MouseEvent<HTMLDivElement>) =>
-                WindowsAnimation.showHoverAnimation(e, isDarkMode)
-              }
-              onMouseLeave={(e: React.MouseEvent<HTMLDivElement>) =>
-                WindowsAnimation.removeHoverAnimation(e)
-              }
               className="flex items-center justify-center gap-4 p-4 origin-center transform border border-gray-300 rounded-sm sm:justify-start bg-gray-50 hover:bg-white dark:bg-darkPrimary hover:dark:bg-darkSecondary dark:border-neutral-700 md:origin-top group"
             >
               <div className="relative transition pointer-events-none select-none group-hover:scale-110 sm:group-hover:scale-100">
@@ -121,10 +104,10 @@ export function SkillsSection() {
               <p className="hidden text-sm font-semibold pointer-events-none select-none sm:inline-flex md:text-base">
                 {skill.name}
               </p>
-            </motion.div>
+            </div>
           );
         })}
-      </motion.div>
+      </div>
     </section>
   );
 }

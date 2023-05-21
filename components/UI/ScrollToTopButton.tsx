@@ -2,7 +2,7 @@
 
 import { IoIosArrowUp } from "react-icons/io";
 import { useEffect, useState } from "react";
-import useScrollPercentage from "~/utils/hooks/useScrollPercentage";
+import useScrollPercentage from "~/lib/hooks/useScrollPercentage";
 
 export default function ScrollToTopButton() {
   const [showButton, setShowButton] = useState(false);
