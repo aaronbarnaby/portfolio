@@ -62,12 +62,11 @@ export default function ContactForm() {
         ref={formRef}
         initial="hidden"
         whileInView="visible"
-        variants={FadeContainer}
         viewport={{ once: true }}
         className="flex flex-col items-center w-full max-w-xl mx-auto my-10 dark:text-gray-300"
         onSubmit={sendEmail}
       >
-        <motion.div variants={mobileNavItemSideways} className="relative z-0 w-full mb-6 group">
+        <motion.div className="relative z-0 w-full mb-6 group">
           <input
             type="text"
             name="name"
@@ -83,7 +82,7 @@ export default function ContactForm() {
             Name
           </label>
         </motion.div>
-        <motion.div variants={mobileNavItemSideways} className="relative z-0 w-full mb-6 group">
+        <motion.div className="relative z-0 w-full mb-6 group">
           <input
             type="email"
             name="email"
@@ -99,7 +98,7 @@ export default function ContactForm() {
             Email address
           </label>
         </motion.div>
-        <motion.div variants={mobileNavItemSideways} className="relative z-0 w-full mb-6 group">
+        <motion.div className="relative z-0 w-full mb-6 group">
           <input
             type="subject"
             name="subject"
@@ -115,7 +114,7 @@ export default function ContactForm() {
             Subject
           </label>
         </motion.div>
-        <motion.div variants={mobileNavItemSideways} className="relative z-0 w-full mb-6 group">
+        <motion.div className="relative z-0 w-full mb-6 group">
           <textarea
             name="message"
             id="floating_message"
@@ -131,10 +130,7 @@ export default function ContactForm() {
           </label>
         </motion.div>
 
-        <motion.div
-          variants={mobileNavItemSideways}
-          className="w-full overflow-hidden rounded-lg shadow-lg sm:max-w-sm"
-        >
+        <motion.div className="w-full overflow-hidden rounded-lg shadow-lg sm:max-w-sm">
           <button
             ref={sendButtonRef}
             type="submit"
