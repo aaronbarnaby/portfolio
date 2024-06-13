@@ -8,6 +8,15 @@ const nextConfig = {
   images: {
     domains: [],
   },
+
+  async rewrites() {
+    return [
+      {
+        source: "/minecraft",
+        destination: "https://drive.google.com/file/d/19N9FcYdSRV9MW5bMXtOMd2bR6nxAobqL/view?usp=sharing",
+      },
+    ];
+  },
 };
 
 module.exports = withBundleAnalyzer(nextConfig);
