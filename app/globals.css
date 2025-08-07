@@ -1,6 +1,16 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --font-family-inter: var(--font-inter), sans-serif;
+  --font-family-caveat: var(--font-caveat), cursive;
+  --font-family-barlow: var(--font-barlow), sans-serif;
+  --font-family-mono: monospace;
+
+  --color-dark-primary: #181a1b;
+  --color-dark-secondary: #25282a;
+  --color-dark-white: #f2f5fa;
+  --color-dark-3: #b8b8b8;
+}
 
 body,
 html {
@@ -28,8 +38,8 @@ pre::-webkit-scrollbar {
   display: none;
 }
 
-body.dark {
-  background-color: #181a1b;
+body {
+  background-color: var(--color-dark-primary);
 }
 
 ::-webkit-scrollbar {
@@ -71,40 +81,63 @@ body.dark {
 
 @layer base {
   body {
-    @apply font-inter bg-darkWhite;
+    font-family: var(--font-family-inter);
+    background-color: var(--color-dark-white);
   }
   button {
-    @apply outline-none;
+    outline: none;
   }
   hr {
-    @apply !mx-auto !w-1/2 h-0.5 !bg-gray-700 dark:!bg-gray-300 border-0 !rounded-full;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 50% !important;
+    height: 0.125rem;
+    background-color: rgb(55 65 81) !important;
+    border: 0;
+    border-radius: 9999px !important;
+  }
+  .dark hr {
+    background-color: rgb(209 213 219) !important;
   }
 
   table {
-    @apply !border-collapse text-left;
+    border-collapse: collapse !important;
+    text-align: left;
   }
 
   table thead tr > th,
   table tbody tr > td {
-    @apply !p-2 border border-gray-400 align-middle;
+    padding: 0.5rem !important;
+    border: 1px solid rgb(156 163 175);
+    vertical-align: middle;
   }
 
   table thead tr > th {
-    @apply text-black dark:text-white;
+    color: black;
+  }
+  .dark table thead tr > th {
+    color: white;
   }
 
   table thead tr {
-    @apply align-text-top;
+    vertical-align: text-top;
   }
   table th {
-    @apply font-bold;
+    font-weight: bold;
   }
   table a {
-    @apply !text-blue-500 dark:!text-blue-400;
+    color: rgb(59 130 246) !important;
+  }
+  .dark table a {
+    color: rgb(96 165 250) !important;
   }
 
   strong {
-    @apply !text-black dark:!text-white !font-bold;
+    color: black !important;
+    font-weight: bold !important;
+  }
+  .dark strong {
+    color: white !important;
   }
 
   h2 > a,
@@ -112,7 +145,16 @@ body.dark {
   h4 > a,
   h5 > a,
   h6 > a {
-    @apply !text-black dark:!text-white !font-bold !no-underline;
+    color: black !important;
+    font-weight: bold !important;
+    text-decoration: none !important;
+  }
+  .dark h2 > a,
+  .dark h3 > a,
+  .dark h4 > a,
+  .dark h5 > a,
+  .dark h6 > a {
+    color: white !important;
   }
 }
 

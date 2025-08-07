@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import "./globals.css";
 import { Inter, Barlow, Caveat } from "next/font/google";
-import { DarkModeProvider } from "~/lib/Context/DarkModeContext";
 import { TopNavbar } from "~/components/Layout";
 import Footer from "~/components/Layout/Footer";
 import ScrollToTopButton from "~/components/UI/ScrollToTopButton";
@@ -29,14 +28,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body className={`${barlow.variable} ${inter.variable} ${caveat.variable}`}>
-        <DarkModeProvider>
-          <TopNavbar />
-          {children}
-          <ScrollToTopButton />
-          <Footer />
-        </DarkModeProvider>
+        <TopNavbar />
+        {children}
+        <ScrollToTopButton />
+        <Footer />
       </body>
     </html>
   );

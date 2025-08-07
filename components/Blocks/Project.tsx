@@ -35,7 +35,7 @@ export default function Project({ project }: { project: ProjectType }) {
             return (
               <span
                 key={`${tool}-${index}`}
-                className="px-2 py-1 text-xs text-gray-500 bg-gray-100 rounded dark:bg-darkPrimary"
+                className="px-2 py-1 text-xs text-gray-500 bg-gray-100 rounded dark:bg-[var(--color-dark-primary)]"
               >
                 {tool}
               </span>

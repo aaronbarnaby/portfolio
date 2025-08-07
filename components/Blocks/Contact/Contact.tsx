@@ -1,7 +1,7 @@
 export default function Contact() {
   return (
-    <div id="contact" className="dark:bg-darkPrimary !relative mb-10">
-      <section className="pt-6 text-center w-full-width dark:bg-darkPrimary dark:text-white">
+    <div id="contact" className="dark:bg-[var(--color-dark-primary)] !relative mb-10">
+      <section className="pt-6 text-center w-full-width dark:bg-[var(--color-dark-primary)] dark:text-white">
         <h1 className="text-4xl font-bold">Get in touch</h1>
 
         <p className="px-4 py-2 font-medium dark:text-gray-300">
@@ -13,7 +13,7 @@ export default function Contact() {
         </p>
       </section>
 
-      {/* <section className="flex flex-col w-full px-5 mx-auto lg:flex-row dark:bg-darkPrimary dark:text-white lg:pb-10">
+      {/* <section className="flex flex-col w-full px-5 mx-auto lg:flex-row dark:bg-[var(--color-dark-primary)] dark:text-white lg:pb-10">
         <div className="w-full mx-auto mt-10">
           <AnimatedHeading
             variants={popUpFromBottomForText}

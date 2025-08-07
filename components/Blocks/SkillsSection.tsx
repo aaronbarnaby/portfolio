@@ -10,19 +10,16 @@ import {
   SiTypescript,
   SiReact,
   SiNodedotjs,
-  SiAmazonaws,
+  SiAmazon,
   SiAdobephotoshop,
-  SiCsharp,
+  SiSharp,
   SiJira,
   SiTerraform,
 } from "react-icons/si";
 import { TbSql } from "react-icons/tb";
 import { Heading } from "../UI/Heading";
-import { useDarkMode } from "~/lib/Context/DarkModeContext";
 
 export function SkillsSection() {
-  const { isDarkMode } = useDarkMode();
-
   const skills = [
     {
       name: "HTML",
@@ -50,7 +47,7 @@ export function SkillsSection() {
     },
     {
       name: "C#",
-      Icon: SiCsharp,
+      Icon: SiSharp,
     },
     {
       name: "Tailwind CSS",
@@ -70,7 +67,7 @@ export function SkillsSection() {
     },
     {
       name: "AWS",
-      Icon: SiAmazonaws,
+      Icon: SiAmazon,
     },
     {
       name: "Terraform",
@@ -96,7 +93,7 @@ export function SkillsSection() {
           return (
             <div
               key={index}
-              className="flex items-center justify-center gap-4 p-4 origin-center transform border border-gray-300 rounded-sm sm:justify-start bg-gray-50 hover:bg-white dark:bg-darkPrimary hover:dark:bg-darkSecondary dark:border-neutral-700 md:origin-top group"
+              className="flex items-center justify-center gap-4 p-4 origin-center transform border border-gray-300 rounded-sm sm:justify-start bg-gray-50 hover:bg-white dark:bg-[var(--color-dark-primary)] hover:dark:bg-[var(--color-dark-secondary)] dark:border-neutral-700 md:origin-top group"
             >
               <div className="relative transition pointer-events-none select-none group-hover:scale-110 sm:group-hover:scale-100">
                 <Icon className="w-8 h-8" />

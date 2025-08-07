@@ -2,11 +2,9 @@
 
 import { motion } from "framer-motion";
 import { useRef } from "react";
-import { useDarkMode } from "~/lib/Context/DarkModeContext";
 import { ContactFormInput } from "~/lib/types";
 
 export default function ContactForm() {
-  const { isDarkMode } = useDarkMode();
   const sendButtonRef = useRef<HTMLButtonElement>(null!);
   const formRef = useRef<HTMLFormElement>(null!);
 
@@ -134,7 +132,7 @@ export default function ContactForm() {
           <button
             ref={sendButtonRef}
             type="submit"
-            className="relative w-full px-4 py-3 overflow-hidden text-sm font-medium text-center text-white transition duration-300 rounded-lg outline-none bg-neutral-800 dark:bg-darkSecondary active:scale-95 disabled:opacity-50 disabled:active:scale-100"
+            className="relative w-full px-4 py-3 overflow-hidden text-sm font-medium text-center text-white transition duration-300 rounded-lg outline-none bg-neutral-800 dark:bg-[var(--color-dark-secondary)] active:scale-95 disabled:opacity-50 disabled:active:scale-100"
           >
             Send
           </button>

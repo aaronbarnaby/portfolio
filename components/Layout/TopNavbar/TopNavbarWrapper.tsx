@@ -11,11 +11,15 @@ export function TopNavbarWrapper({ children }: PropsWithChildren) {
   // Adding Shadow, backdrop to the navbar as user scroll the screen
   const addShadowToNavbar = useCallback(() => {
     if (window.pageYOffset > 10) {
-      navRef.current!.classList.add(...["shadow", "backdrop-blur-xl", "bg-white/70", "dark:bg-darkSecondary"]);
+      navRef.current!.classList.add(
+        ...["shadow", "backdrop-blur-xl", "bg-white/70", "dark:bg-[var(--color-dark-secondary)]"],
+      );
 
       control.start("visible");
     } else {
-      navRef.current!.classList.remove(...["shadow", "backdrop-blur-xl", "bg-white/70", "dark:bg-darkSecondary"]);
+      navRef.current!.classList.remove(
+        ...["shadow", "backdrop-blur-xl", "bg-white/70", "dark:bg-[var(--color-dark-secondary)]"],
+      );
       control.start("hidden");
     }
   }, [control]);

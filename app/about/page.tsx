@@ -4,9 +4,9 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <div className="py-20 relative max-w-4xl mx-auto dark:bg-darkPrimary dark:text-gray-100 2xl:max-w-5xl 3xl:max-w-7xl">
+    <div className="py-20 relative max-w-4xl mx-auto text-gray-100 2xl:max-w-5xl 3xl:max-w-7xl">
       <section>
-        <h1 className="text-4xl  md:text-5xl font-bold text-neutral-900 dark:text-neutral-200">About Me</h1>
+        <h1 className="text-4xl  md:text-5xl font-bold text-neutral-200">About Me</h1>
 
         <div className="max-w-full pt-5 prose dark:prose-invert">
           <p>
