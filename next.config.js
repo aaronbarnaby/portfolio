@@ -5,9 +5,6 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  images: {
-    domains: [],
-  },
 
   async rewrites() {
     return [
@@ -20,4 +17,3 @@ const nextConfig = {
 };
 
 module.exports = withBundleAnalyzer(nextConfig);
-
