@@ -2,7 +2,7 @@
 
 import {
   SiHtml5,
-  SiCss3,
+  SiCss,
   SiJavascript,
   SiNextdotjs,
   SiTailwindcss,
@@ -10,13 +10,11 @@ import {
   SiTypescript,
   SiReact,
   SiNodedotjs,
-  SiAmazon,
-  SiAdobephotoshop,
   SiSharp,
   SiJira,
   SiTerraform,
 } from "react-icons/si";
-import { TbSql } from "react-icons/tb";
+import { TbBrandAdobePhotoshop, TbBrandAws, TbSql } from "react-icons/tb";
 import { Heading } from "../UI/Heading";
 
 export function SkillsSection() {
@@ -27,7 +25,7 @@ export function SkillsSection() {
     },
     {
       name: "CSS",
-      Icon: SiCss3,
+      Icon: SiCss,
     },
     {
       name: "Javascript",
@@ -67,7 +65,7 @@ export function SkillsSection() {
     },
     {
       name: "AWS",
-      Icon: SiAmazon,
+      Icon: TbBrandAws,
     },
     {
       name: "Terraform",
@@ -79,7 +77,7 @@ export function SkillsSection() {
     },
     {
       name: "Photoshop",
-      Icon: SiAdobephotoshop,
+      Icon: TbBrandAdobePhotoshop,
     },
   ];
 

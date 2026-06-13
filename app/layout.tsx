@@ -1,23 +1,8 @@
 import { Metadata } from "next";
 import "./globals.css";
-import { Inter, Barlow, Caveat } from "next/font/google";
 import { TopNavbar } from "~/components/Layout";
 import Footer from "~/components/Layout/Footer";
 import ScrollToTopButton from "~/components/UI/ScrollToTopButton";
-
-const barlow = Barlow({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-barlow",
-  display: "swap",
-});
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
-const caveat = Caveat({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-caveat",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "Aaron Barnaby",
@@ -29,7 +14,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="dark">
-      <body className={`${barlow.variable} ${inter.variable} ${caveat.variable}`}>
+      <body>
         <TopNavbar />
         {children}
         <ScrollToTopButton />
