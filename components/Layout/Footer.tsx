@@ -12,6 +12,7 @@ export default function Footer() {
           <div className="flex flex-col gap-4 capitalize">
             <FooterLink route="home" text="home" />
             <FooterLink route="about" text="about" />
+            <FooterLink route="showcase" text="showcase" />
           </div>
           <div className="flex flex-col gap-4 capitalize">
             <Link href="https://x.com/BarnabyAaron" target="_blank" rel="noopener noreferrer">
