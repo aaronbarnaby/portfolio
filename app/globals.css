@@ -1,10 +1,11 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @theme {
-  --font-family-inter: var(--font-inter), sans-serif;
-  --font-family-caveat: var(--font-caveat), cursive;
-  --font-family-barlow: var(--font-barlow), sans-serif;
-  --font-family-mono: monospace;
+  --font-inter: Arial, Helvetica, sans-serif;
+  --font-caveat: cursive;
+  --font-barlow: Arial, Helvetica, sans-serif;
+  --font-mono: monospace;
 
   --color-dark-primary: #181a1b;
   --color-dark-secondary: #25282a;
@@ -81,7 +82,7 @@ body {
 
 @layer base {
   body {
-    font-family: var(--font-family-inter);
+    font-family: var(--font-inter);
     background-color: var(--color-dark-white);
   }
   button {

@@ -1,20 +1,11 @@
 "use client";
 
 import { IoIosArrowUp } from "react-icons/io";
-import { useEffect, useState } from "react";
 import useScrollPercentage from "~/lib/hooks/useScrollPercentage";
 
 export default function ScrollToTopButton() {
-  const [showButton, setShowButton] = useState(false);
   const scrollPercentage = useScrollPercentage();
-
-  useEffect(() => {
-    if (scrollPercentage < 95 && scrollPercentage > 10) {
-      setShowButton(true);
-    } else {
-      setShowButton(false);
-    }
-  }, [scrollPercentage]);
+  const showButton = scrollPercentage < 95 && scrollPercentage > 10;
 
   // This function will scroll the window to the top
   const scrollToTop = () => {
